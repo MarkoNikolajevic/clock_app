@@ -29,10 +29,8 @@ export default {
   },
   data () {
     return {
-      ip: '',
       city: '',
       countryCode: '',
-      timeZone: '',
       time: '',
       abbreviation: '',
       hours: null
@@ -44,12 +42,10 @@ export default {
   async function getLocation() {
     const locationApi = 'https://freegeoip.app/json/'
     const res = await this.$http.get(locationApi)
-    this.ip = res.data.ip
     this.city = res.data.city
     this.countryCode = res.data.country_code
-    this.timeZone = res.data.time_zone
     
-    const timeApi = `http://worldtimeapi.org/api/timezone/${this.timeZone}`
+    const timeApi = `http://worldtimeapi.org/api/ip`
     const resTime = await this.$http.get(timeApi)
     const isoTime = resTime.data.datetime
     this.time = isoTime.substr(11, 5)
