@@ -1,0 +1,17 @@
+.heading5 {
+  font-weight: 700;
+
+  @media screen and (max-width: 47.9375rem) {
+    font-size: 0.75rem;
+    line-height: 1.375rem;
+  }
+}
+
+.text {
+  margin-bottom: 1rem;
+
+  @media screen and (max-width: 47.9375rem) {
+    font-size: 0.75rem;
+    line-height: 1.375rem;
+  }
+}
