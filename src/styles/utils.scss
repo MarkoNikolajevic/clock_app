@@ -1,3 +1,11 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .heading1 {
   margin: 1.875rem 0;
 
@@ -13,7 +21,7 @@
     letter-spacing: -4.38px;
   }
 
-  @media screen and (min-width: 80rem) {
+  @media screen and (min-width: 85rem) {
     font-size: 12.5rem;
     line-height: 12.5rem;
     letter-spacing: -5px;
@@ -35,7 +43,7 @@
     letter-spacing: 3.6px;
   }
 
-  @media screen and (min-width: 80rem) {
+  @media screen and (min-width: 85rem) {
     font-size: 1.5rem;
     line-height: 1.75rem;
     letter-spacing: 4.8px;
@@ -64,7 +72,7 @@
     letter-spacing: 3.6px;
   }
 
-  @media screen and (min-width: 80rem) {
+  @media screen and (min-width: 85rem) {
     font-size: 1.25rem;
     line-height: 1.75rem;
     letter-spacing: 4px;
@@ -114,7 +122,7 @@
     font-size: 2rem;
   }
 
-  @media screen and (min-width: 80rem) {
+  @media screen and (min-width: 85rem) {
     font-size: 2.5rem;
   }
 }

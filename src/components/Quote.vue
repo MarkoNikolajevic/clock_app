@@ -47,6 +47,10 @@ export default {
   .quote-container {
     margin-right: 1rem;
   }
+
+  @media screen and (min-width: 80rem) {
+    width: 50%;
+  }
 }
 button {
   background: none;

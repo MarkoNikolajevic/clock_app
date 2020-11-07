@@ -67,14 +67,6 @@ export default {
 <style lang='scss'>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 
-*,
-*::before,
-*::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 #app {
   position: relative;
   color: $white;
@@ -97,6 +89,14 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media screen and (min-width: 48rem) {
+      padding: 5rem 8rem 4rem 4rem;
+    }
+
+    @media screen and (min-width: 85rem) {
+      padding: 3.5rem 5.75rem 6.125rem 10.25rem;
+    }
   }
 
   .greeting-container {
