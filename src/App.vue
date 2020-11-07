@@ -53,7 +53,7 @@ export default {
     this.city = res.data.city
     this.countryCode = res.data.country_code
     
-    const timeApi = `http://worldtimeapi.org/api/ip`
+    const timeApi = `https://worldtimeapi.org/api/ip`
     const resTime = await this.$http.get(timeApi)
     const isoTime = resTime.data.datetime
     this.time = isoTime.substr(11, 5)
