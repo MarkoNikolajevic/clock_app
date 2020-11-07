@@ -6,6 +6,18 @@
     line-height: 6.25rem;
     letter-spacing: -2.5px;
   }
+
+  @media screen and (min-width: 48rem) {
+    font-size: 10.9375rem;
+    line-height: 10.9375rem;
+    letter-spacing: -4.38px;
+  }
+
+  @media screen and (min-width: 80rem) {
+    font-size: 12.5rem;
+    line-height: 12.5rem;
+    letter-spacing: -5px;
+  }
 }
 
 .heading3 {
@@ -15,6 +27,18 @@
     font-size: 0.9375rem;
     line-height: 1.75rem;
     letter-spacing: 3px;
+  }
+
+  @media screen and (min-width: 48rem) {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    letter-spacing: 3.6px;
+  }
+
+  @media screen and (min-width: 80rem) {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    letter-spacing: 4.8px;
   }
 }
 
@@ -33,6 +57,18 @@
     line-height: 1.75rem;
     letter-spacing: 3px;
   }
+
+  @media screen and (min-width: 48rem) {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    letter-spacing: 3.6px;
+  }
+
+  @media screen and (min-width: 80rem) {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    letter-spacing: 4px;
+  }
 }
 
 .heading5 {
@@ -42,23 +78,43 @@
     font-size: 0.75rem;
     line-height: 1.375rem;
   }
+
+  @media screen and (min-width: 48rem) {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
 
 .text {
   margin-bottom: 1rem;
+  font-weight: 400;
 
   @media screen and (max-width: 47.9375rem) {
     font-size: 0.75rem;
     line-height: 1.375rem;
-    font-weight: 400;
+  }
+
+  @media screen and (min-width: 48rem) {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 
 .timezone {
+  font-weight: 300;
+  letter-spacing: 0px;
+  line-height: 1.75rem;
+  margin-left: 1rem;
+
   @media screen and (max-width: 47.9375rem) {
-    font-weight: 400;
     font-size: 0.9375rem;
-    line-height: 1.75rem;
-    letter-spacing: 0px;
+  }
+
+  @media screen and (min-width: 48rem) {
+    font-size: 2rem;
+  }
+
+  @media screen and (min-width: 80rem) {
+    font-size: 2.5rem;
   }
 }

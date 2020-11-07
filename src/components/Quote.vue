@@ -2,7 +2,7 @@
   <div class="flex-grid">
     <div class="quote-container">
       <p class="text">"{{quote}}"</p>
-      <h5>{{author}}</h5>
+      <h5 class="heading5">{{author}}</h5>
     </div>
     <button @click="getQuote()">
       <img src="../assets/icon-refresh.svg" alt="Refresh icon">

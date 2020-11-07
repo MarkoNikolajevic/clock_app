@@ -1,7 +1,15 @@
 <template>
   <div id="app">
-    <img class='app-bg-img' v-if='hours >= 5 && hours < 18' src="./assets/bg-image-daytime-mobile.jpg" alt="sun icon">
-    <img class='app-bg-img' v-else src="./assets/bg-image-nighttime-mobile.jpg" alt="moon icon">
+    <picture v-if='hours >= 5 && hours < 18' class='app-bg-img'>
+      <source media="(min-width: 1200px)" srcset="./assets/bg-image-daytime-desktop.jpg">
+      <source media="(min-width: 768px)" srcset="./assets/bg-image-daytime-tablet.jpg">
+      <img class='app-bg-img' src="./assets/bg-image-daytime-mobile.jpg" alt="river between trees">
+    </picture>
+    <picture v-else class='app-bg-img'>
+      <source media="(min-width: 1200px)" srcset="./assets/bg-image-nighttime-desktop.jpg">
+      <source media="(min-width: 768px)" srcset="./assets/bg-image-nighttime-tablet.jpg">
+      <img class='app-bg-img' src="./assets/bg-image-nighttime-mobile.jpg" alt="sky full of stars">
+    </picture>
     <div class="inside">
       <Quote />
       <main>
@@ -57,7 +65,7 @@ export default {
 </script>
 
 <style lang='scss'>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 
 *,
 *::before,
