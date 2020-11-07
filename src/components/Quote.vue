@@ -1,6 +1,6 @@
 <template>
   <div class="flex-grid">
-    <div>
+    <div class="quote-container">
       <p class="text">"{{quote}}"</p>
       <h5>{{author}}</h5>
     </div>
@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import axios from 'axios'
   
 export default {
   name: 'Quote',
@@ -23,17 +22,17 @@ export default {
     }
   },
   methods: {
-    async getQuote () {
+    async getQuote() {
       const randomQuoteApi = 'https://programming-quotes-api.herokuapp.com/quotes/random'
-      const res = await axios.get(randomQuoteApi)
+      const res = await this.$http.get(randomQuoteApi)
       this.quote = res.data.en
       this.author = res.data.author
     }
   },
   created:
-    async function getQuote () {
+    async function getQuote() {
       const randomQuoteApi = 'https://programming-quotes-api.herokuapp.com/quotes/random'
-      const res = await axios.get(randomQuoteApi)
+      const res = await this.$http.get(randomQuoteApi)
       this.quote = res.data.en
       this.author = res.data.author
     }
@@ -44,6 +43,10 @@ export default {
 .flex-grid {
   display: flex;
   justify-content: space-between;
+
+  .quote-container {
+    margin-right: 1rem;
+  }
 }
 button {
   background: none;
