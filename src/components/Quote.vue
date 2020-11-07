@@ -1,8 +1,12 @@
 <template>
-  <div>
-    <p class="text">"{{quote}}"</p>
-    <h5>{{author}}</h5>
-    <button @click="getQuote()">Show</button>
+  <div class="flex-grid">
+    <div>
+      <p class="text">"{{quote}}"</p>
+      <h5>{{author}}</h5>
+    </div>
+    <button @click="getQuote()">
+      <img src="../assets/icon-refresh.svg" alt="Refresh icon">
+    </button>
   </div>
 </template>
 
@@ -37,5 +41,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.flex-grid {
+  display: flex;
+  justify-content: space-between;
+}
+button {
+  background: none;
+  border: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  cursor: pointer;
+}
 </style>

@@ -73,7 +73,7 @@ export default {
 
   .inside {
     position: relative;
-    background-color: rgba(0,0,0, 40%);
+    background-color: rgba(0, 0, 0, 0.4);
     height: 100%;
     padding: 2rem 1.625rem;
   }
