@@ -11,7 +11,7 @@
       <img class='app-bg-img' src="./assets/bg-image-nighttime-mobile.jpg" alt="sky full of stars">
     </picture>
     <div class="inside">
-      <Quote />
+      <Quote v-if='!showInfo' />
       <main>
         <div class='greeting-container'>
           <img v-if='hours >= 5 && hours < 18' src="./assets/icon-sun.svg" alt="sun icon">
@@ -22,32 +22,43 @@
         </div>
         <h1 class='heading1'>{{time}}<span class="timezone">{{abbreviation}}</span></h1>
         <h3 class='heading3'>In {{city}}, {{countryCode}}</h3>
-        <Button />
+        <Button v-bind:showMore='showMore' />
       </main>
     </div>
+    <MoreInfo v-if='showInfo' v-bind:timezone='timezone' v-bind:dayOfYear='dayOfYear'
+      v-bind:dayOfWeek='dayOfWeek' v-bind:weekNumber='weekNumber' />
   </div>
 </template>
 
 <script>
 import Quote from './components/Quote'
 import Button from './components/Button'
+import MoreInfo from './components/MoreInfo'
 
 export default {
   name: 'App',
   components: {
     Quote,
-    Button
+    Button,
+    MoreInfo
   },
   data () {
     return {
+      showInfo: false,
       city: '',
       countryCode: '',
       time: '',
       abbreviation: '',
-      hours: null
+      hours: null,
+      timezone: '',
+      dayOfYear: null,
+      dayOfWeek: null,
+      weekNumber: null,
+      showMore: () => {
+        console.log(this.showInfo)
+        return this.showInfo = !this.showInfo
+      }
     }
-  },
-  methods: {
   },
   created:
   async function getLocation() {
@@ -61,6 +72,10 @@ export default {
     const isoTime = resTime.data.datetime
     this.time = isoTime.substr(11, 5)
     this.abbreviation = resTime.data.abbreviation
+    this.timezone = resTime.data.timezone
+    this.dayOfYear = resTime.data.day_of_year
+    this.dayOfWeek = resTime.data.day_of_week
+    this.weekNumber = resTime.data.week_number
     const hoursStr = this.time.substr(0, 2)
     this.hours = parseInt(hoursStr, 10)
   }

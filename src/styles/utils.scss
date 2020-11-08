@@ -28,6 +28,20 @@
   }
 }
 
+.heading2 {
+  @media screen and (max-width: 47.9375rem) {
+    font-size: 1.25rem;
+  }
+
+  @media screen and (min-width: 48rem) {
+    font-size: 2.5rem;
+  }
+
+  @media screen and (min-width: 85rem) {
+    font-size: 3.5rem;
+  }
+}
+
 .heading3 {
   text-transform: uppercase;
 
@@ -90,6 +104,27 @@
   @media screen and (min-width: 48rem) {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+}
+
+.heading6 {
+  font-weight: 400;
+  line-height: 1.75rem;
+  text-transform: uppercase;
+
+  @media screen and (max-width: 47.9375) {
+    font-size: 0.625rem;
+    letter-spacing: 2px;
+  }
+
+  @media screen and (min-width: 48rem) {
+    font-size: 0.8125rem;
+    letter-spacing: 2.6px;
+  }
+
+  @media screen and (min-width: 85rem) {
+    font-size: 0.9375rem;
+    letter-spacing: 3px;
   }
 }
 

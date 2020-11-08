@@ -1,5 +1,5 @@
 <template>
-  <button class="btn">
+  <button class="btn" @click='showMore()'>
     More
     <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" fill-rule="evenodd">
@@ -12,7 +12,10 @@
 
 <script>
 export default {
-  name: 'Button'
+  name: 'Button',
+  props: {
+    showMore: Function
+  }
 }
 </script>
 
