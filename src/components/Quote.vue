@@ -11,10 +11,8 @@
 </template>
 
 <script>
-  
 export default {
   name: 'Quote',
-  
   data: () => {
     return {
       quote: '',

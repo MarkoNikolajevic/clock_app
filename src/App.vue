@@ -22,18 +22,21 @@
         </div>
         <h1 class='heading1'>{{time}}<span class="timezone">{{abbreviation}}</span></h1>
         <h3 class='heading3'>In {{city}}, {{countryCode}}</h3>
+        <Button />
       </main>
     </div>
   </div>
 </template>
 
 <script>
-import Quote from './components/Quote.vue'
+import Quote from './components/Quote'
+import Button from './components/Button'
 
 export default {
   name: 'App',
   components: {
-    Quote
+    Quote,
+    Button
   },
   data () {
     return {
@@ -96,6 +99,12 @@ export default {
 
     @media screen and (min-width: 85rem) {
       padding: 3.5rem 5.75rem 6.125rem 10.25rem;
+    }
+  }
+
+  @media screen and (min-width: 80rem) {
+    main {
+      position: relative;
     }
   }
 
