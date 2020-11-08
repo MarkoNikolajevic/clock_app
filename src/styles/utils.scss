@@ -70,8 +70,12 @@
   display: flex;
   align-items: center;
 
-  img {
-    margin-right: 1rem;
+  span {
+    display: none;
+
+    @media screen and (min-width: 48rem) {
+      display: block;
+    }
   }
 
   @media screen and (max-width: 47.9375rem) {

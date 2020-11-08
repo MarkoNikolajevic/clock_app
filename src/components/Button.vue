@@ -1,7 +1,7 @@
 <template>
   <button class="btn" @click='showMore()'>
-    More
-    <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+    {{ !showInfo ? 'More' : 'Less' }}
+    <svg v-bind:class='{less: showInfo}' width="40" height="40" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" fill-rule="evenodd">
         <circle fill="#303030" cx="20" cy="20" r="20"/>
         <path stroke="#FFF" stroke-width="2" d="M14 23l6-6 6 6"/>
@@ -14,7 +14,8 @@
 export default {
   name: 'Button',
   props: {
-    showMore: Function
+    showMore: Function,
+    showInfo: Boolean
   }
 }
 </script>
@@ -50,11 +51,15 @@ export default {
     svg {
       margin-left: 0.5rem;
       transition: all 300ms ease-in-out;
-      transform: rotateX(180deg);
+      transform: rotate(180deg);
 
       circle {
         transition: fill 300ms ease-in-out;
       }
+    }
+
+    .less {
+      transform: rotate(0deg);
     }
 
     @media screen and (min-width: 80rem) {

@@ -42,8 +42,6 @@ export default {
     position: absolute;
     width: 100%;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.8);
-    color: $darkGray;
     padding: 2rem 1.625rem;
     
     @media screen and (min-width: 48rem) {
@@ -66,5 +64,14 @@ export default {
         align-items: flex-start;
       }
     }
+  }
+  .daytime {
+    background: rgba(255, 255, 255, 0.8);
+    color: $darkGray;
+  }
+
+  .nighttime {
+    color: $white;
+    background: rgba(0, 0, 0, 0.75);
   }
 </style>

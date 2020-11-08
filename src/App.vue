@@ -16,16 +16,16 @@
         <div class='greeting-container'>
           <img v-if='hours >= 5 && hours < 18' src="./assets/icon-sun.svg" alt="sun icon">
           <img v-else src="./assets/icon-moon.svg" alt="moon icon">
-          <h4 class='heading4' v-if='hours >= 5 && hours < 12'>Good morning</h4>
-          <h4 class='heading4' v-else-if='hours >= 12 && hours < 18'>Good afternoon</h4>
-          <h4 class='heading4' v-else-if='hours >= 18 || hours < 5'>Good evening</h4>
+          <h4 class='heading4' v-if='hours >= 5 && hours < 12'>Good morning<span>, it's currently</span></h4>
+          <h4 class='heading4' v-else-if='hours >= 12 && hours < 18'>Good afternoon<span>, it's currently</span></h4>
+          <h4 class='heading4' v-else-if='hours >= 18 || hours < 5'>Good evening<span>, it's currently</span></h4>
         </div>
         <h1 class='heading1'>{{time}}<span class="timezone">{{abbreviation}}</span></h1>
         <h3 class='heading3'>In {{city}}, {{countryCode}}</h3>
-        <Button v-bind:showMore='showMore' />
+        <Button v-bind:showInfo='showInfo' v-bind:showMore='showMore' />
       </main>
     </div>
-    <MoreInfo v-if='showInfo' v-bind:timezone='timezone' v-bind:dayOfYear='dayOfYear'
+    <MoreInfo v-bind:class="[hours >= 5 && hours < 18 ? 'daytime' : 'nighttime']" v-if='showInfo' v-bind:timezone='timezone' v-bind:dayOfYear='dayOfYear'
       v-bind:dayOfWeek='dayOfWeek' v-bind:weekNumber='weekNumber' />
   </div>
 </template>
@@ -55,7 +55,6 @@ export default {
       dayOfWeek: null,
       weekNumber: null,
       showMore: () => {
-        console.log(this.showInfo)
         return this.showInfo = !this.showInfo
       }
     }
