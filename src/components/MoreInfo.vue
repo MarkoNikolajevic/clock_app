@@ -1,26 +1,28 @@
 <template>
-  <div class='info-grid'>
-    <div class='info-col'>
-      <div class='info-flex'>
-        <h6 class='heading6'>Current timezone</h6>
-        <h2 class='heading2'>{{timezone}}</h2>
+  <transition name="slide-fade-y">
+    <div class='info-grid'>
+      <div class='info-col'>
+        <div class='info-flex'>
+          <h6 class='heading6'>Current timezone</h6>
+          <h2 class='heading2'>{{timezone}}</h2>
+        </div>
+        <div class='info-flex'>
+          <h6 class='heading6'>Day of the year</h6>
+          <h2 class='heading2'>{{dayOfYear}}</h2>
+        </div>
       </div>
-      <div class='info-flex'>
-        <h6 class='heading6'>Day of the year</h6>
-        <h2 class='heading2'>{{dayOfYear}}</h2>
+      <div class='info-col'>
+        <div class='info-flex'>
+          <h6 class='heading6'>Day of the week</h6>
+          <h2 class='heading2'>{{dayOfWeek}}</h2>
+        </div>
+        <div class='info-flex'>
+          <h6 class='heading6'>Week number</h6>
+          <h2 class='heading2'>{{weekNumber}}</h2>
+        </div>
       </div>
     </div>
-    <div class='info-col'>
-      <div class='info-flex'>
-        <h6 class='heading6'>Day of the week</h6>
-        <h2 class='heading2'>{{dayOfWeek}}</h2>
-      </div>
-      <div class='info-flex'>
-        <h6 class='heading6'>Week number</h6>
-        <h2 class='heading2'>{{weekNumber}}</h2>
-      </div>
-    </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -73,5 +75,17 @@ export default {
   .nighttime {
     color: $white;
     background: rgba(0, 0, 0, 0.75);
+  }
+
+  /* animations */
+  .slide-fade-y-enter-active {
+    transition: all 600ms ease-in-out;
+  }
+  .slide-fade-y-leave-active {
+    transition: all 200ms cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-y-enter, .slide-fade-y-leave-to {
+    transform: translateY(100%);
+    opacity: 0;
   }
 </style>
