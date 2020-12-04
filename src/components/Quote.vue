@@ -25,17 +25,17 @@ export default {
   },
   methods: {
     async getQuote() {
-      const randomQuoteApi = 'https://programming-quotes-api.herokuapp.com/quotes/random'
+      const randomQuoteApi = 'https://api.quotable.io/random'
       const res = await this.$http.get(randomQuoteApi)
-      this.quote = res.data.en
+      this.quote = res.data.content
       this.author = res.data.author
     }
   },
   created:
     async function getQuote() {
-      const randomQuoteApi = 'https://programming-quotes-api.herokuapp.com/quotes/random'
+      const randomQuoteApi = 'https://api.quotable.io/random'
       const res = await this.$http.get(randomQuoteApi)
-      this.quote = res.data.en
+      this.quote = res.data.content
       this.author = res.data.author
     }
 }
