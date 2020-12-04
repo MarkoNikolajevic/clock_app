@@ -92,10 +92,15 @@ export default {
 
   .app-bg-img  {
     position: absolute;
+    object-fit: cover;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+
+    img {
+      object-fit: cover;
+    }
   }
 
   .inside {
